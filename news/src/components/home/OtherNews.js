@@ -9,7 +9,7 @@ const renderOthernews = ({otherNews}) => {
             <div
             className="left"
             style={{background:`url(/images/articles/${item.img})`}}
-            >hhhh
+            >
             </div>
             <div className="right">
               <h3>{item.title}</h3>
