@@ -1,9 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+const renderOthernews = ({otherNews}) => {
+  if(otherNews){
+    return otherNews.map((item)=>{
+      return (
+          <Link to={`/news/${item.id}`} key={item.id} className="item">
+            <div
+            className="left"
+            style={{background:`url(/images/articles/${item.img})`}}
+            >hhhh
+            </div>
+            <div className="right">
+              <h3>{item.title}</h3>
+              <div className="category-tag">{item.category}</div>
+              <div className="tags">
+                <span>
+                  <i className="fa fa-eye"></i>{item.views}
+                </span>
+                 <span>
+                  <i className="fa fa-thumbs-up"></i>{item.likes[0]}
+                </span>
+              </div>
+            </div>
+          </Link>
+        )
+    })
+  }
+}
+
 const OtherNews = (props) => {
   return(
-      <div>OTHER NEWS</div>
+      <div className="other-news">
+        <h2>Other News</h2>
+        <div className="other-news-items">
+          {renderOthernews(props)}
+        </div>
+      </div>
     )
 }
 
